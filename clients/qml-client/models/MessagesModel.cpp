@@ -305,6 +305,10 @@ void MessagesModel::setQmlClient(DeclarativeClient *qmlClient)
 
     connect(client()->messagingApi(), &MessagingApi::messageReceived,
             this, &MessagesModel::onMessageReceived);
+    connect(client()->messagingApi(), &MessagingApi::messageEnqueued,
+            this, &MessagesModel::onMessageQueued);
+    connect(client()->messagingApi(), &MessagingApi::messageSent,
+            this, &MessagesModel::onMessageSent);
 }
 
 //const MessagesModel::SMessage *MessagesModel::messageAt(quint32 messageIndex) const
@@ -577,6 +581,17 @@ void MessagesModel::onMessageReceived(const Peer peer, quint32 messageId)
         return;
     }
     insertMessages({messageId});
+}
+
+void MessagesModel::onMessageQueued(const Telegram::Peer peer, quint64 messageRandomId,
+                                    const QString &message)
+{
+
+}
+
+void MessagesModel::onMessageSent(const Peer peer, quint64 sentRandomId, quint32 acceptedMessageId)
+{
+
 }
 
 MessagesModel::Role MessagesModel::intToRole(int value)

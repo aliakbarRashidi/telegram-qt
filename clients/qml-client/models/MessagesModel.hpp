@@ -269,6 +269,9 @@ protected:
 
     void processMessages(const QVector<quint32> &messageIds);
     void onMessageReceived(const Telegram::Peer peer, quint32 messageId);
+    void onMessageQueued(const Telegram::Peer peer, quint64 messageRandomId,
+                          const QString &message /* const MessageApi::SendOptions &options */);
+    void onMessageSent(const Telegram::Peer peer, quint64 sentRandomId, quint32 acceptedMessageId);
 
     static Role intToRole(int value);
     static Column intToColumn(int value);
