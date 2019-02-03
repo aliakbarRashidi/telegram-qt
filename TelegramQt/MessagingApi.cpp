@@ -45,6 +45,7 @@ quint64 MessagingApiPrivate::sendMessage(const Peer peer, const QString &message
 
     const TLInputPeer inputPeer = dataApi->toInputPeer(peer);
     const quint64 randomId = dataApi->enqueueMessage(peer, message, options.replyToMessageId());
+    // TODO: emit messageEnqueued()
     MessagesRpcLayer::PendingUpdates *rpcOperation = messagesLayer()->sendMessage(flags, inputPeer, options.replyToMessageId(),
                                                                                   message, randomId, TLReplyMarkup(), {});
     rpcOperation->connectToFinished(this, &MessagingApiPrivate::onMessageSendResult, randomId, rpcOperation);
