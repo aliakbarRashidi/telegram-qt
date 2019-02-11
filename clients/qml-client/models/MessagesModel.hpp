@@ -278,6 +278,7 @@ protected:
     static Role indexToRole(const QModelIndex &index, int role = Qt::DisplayRole);
     QString roleToName(Role role) const;
 
+    MessagesOperation *m_fetchOperation = nullptr;
     QVector<Event*> m_events;
     Telegram::Peer m_peer;
 };

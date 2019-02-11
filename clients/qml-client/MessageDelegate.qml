@@ -19,8 +19,8 @@ ItemDelegate {
         implicitHeight: details.height
         PeerPicture {
             id: pictureFrame
-            width: 48
-            height: 48
+            height: 32
+            width: 32
             peer: Telegram.Namespace.peerFromUserId(userInfo.userId)
             displayName: senderInfo.displayName
         }

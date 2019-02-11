@@ -14,6 +14,7 @@
 #include "DeclarativeChatInfo.hpp"
 #include "DeclarativeClient.hpp"
 #include "DeclarativeAuthOperation.hpp"
+#include "DeclarativeDialogInfo.hpp"
 #include "DeclarativeMessageSender.hpp"
 #include "DeclarativeSettings.hpp"
 #include "DeclarativeUserInfo.hpp"
@@ -235,6 +236,7 @@ public:
         qmlRegisterType<Telegram::Client::DeclarativeClient>(uri, versionMajor, versionMinor, "Client");
         qmlRegisterType<Telegram::Client::DeclarativeUserInfo>(uri, versionMajor, versionMinor, "UserInfo");
         qmlRegisterType<Telegram::Client::DeclarativeChatInfo>(uri, versionMajor, versionMinor, "ChatInfo");
+        qmlRegisterType<Telegram::Client::DeclarativeDialogInfo>(uri, versionMajor, versionMinor, "DialogInfo");
         qmlRegisterType<Telegram::Client::DeclarativeServerOption>(uri, versionMajor, versionMinor, "ServerOption");
         qmlRegisterType<Telegram::Client::DeclarativeProxySettings>(uri, versionMajor, versionMinor, "ProxySettings");
         qmlRegisterType<Telegram::Client::DeclarativeSettings>(uri, versionMajor, versionMinor, "Settings");

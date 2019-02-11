@@ -73,10 +73,10 @@ int main(int argc, char *argv[])
     Telegram::initialize();
 
     Config config;
-    if (!config.load()) {
-        // create "default" config file to ease editing
-        config.save();
-    }
+//    if (!config.load()) {
+//        // create "default" config file to ease editing
+//        config.save();
+//    }
 
     const Telegram::RsaKey key = Telegram::RsaKey::fromFile(config.privateKeyFile());
     if (!key.isValid()) {

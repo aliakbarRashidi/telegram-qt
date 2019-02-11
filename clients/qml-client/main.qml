@@ -25,12 +25,12 @@ ApplicationWindow {
 
     QtObject {
         id: options
-        property bool localServer: true && false
+        property bool localServer: true //&& false
     }
 
     Telegram.FileAccountStorage {
         id: accountStorage
-        accountIdentifier: options.localServer ? "default-local" : "default-official"
+        accountIdentifier: options.localServer ? "default-custom2" : "default-official"
         fileName: StandardPaths.writableLocation(StandardPaths.HomeLocation) + "/.cache/telegram-qt/secrets/" + accountIdentifier
         onSynced: console.log("Account synced")
     }

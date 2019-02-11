@@ -32,7 +32,6 @@ Frame {
             width: listView.width// - listView.leftMargin - listView.rightMargin
             onClicked: dialogView.currentPeer = peer
             displayName: model.displayName
-            //displayName: model.displayName ? model.displayName : model.firstName + " " + model.lastName
             unreadMessageCount: model.unreadMessageCount
             timestamp: typeof(model.lastMessage) != "undefined" ? model.lastMessage.timestamp : undefined
             lastMessage: model.lastMessage

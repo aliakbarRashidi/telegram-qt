@@ -63,6 +63,16 @@ Frame {
                 peer: currentPeer
                 spacing: rightPadding
                 peerInfo: peer.type === Telegram.Peer.User ? currentUserInfo : currentChatInfo
+
+                ToolButton {
+                    text: "x"
+                    onClicked: {
+                        currentPeer = Telegram.Namespace.emptyPeer()
+                    }
+                    visible: compactMode
+                    anchors.right: parent.right
+                    anchors.verticalCenter: parent.verticalCenter
+                }
             }
 
             MessageView {

@@ -188,6 +188,11 @@ void tst_toOfficial::testGetConfiguration()
     Client::AccountStorage accountStorage;
     Client::DataStorage dataStorage;
     Client::Settings clientSettings;
+    QNetworkProxy proxy;
+    proxy.setType(QNetworkProxy::Socks5Proxy);
+    proxy.setHostName(QLatin1Literal("127.0.0.1"));
+    proxy.setPort(12343);
+    clientSettings.setProxy(proxy);
     client.setAppInformation(getAppInfo());
     client.setSettings(&clientSettings);
     client.setAccountStorage(&accountStorage);

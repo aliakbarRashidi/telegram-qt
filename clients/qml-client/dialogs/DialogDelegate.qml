@@ -29,7 +29,7 @@ ItemDelegate {
 
         PeerPicture {
             id: peerPicture
-            height: 42
+            height: 48
             width: height
             anchors.verticalCenter: parent.verticalCenter
             visible: content.width > width * 4
