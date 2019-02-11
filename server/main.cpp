@@ -42,6 +42,7 @@ protected:
 Authorization::Code DBusCodeAuthProvider::generateCode(Session *session, const QString &identifier)
 {
     Authorization::Code code = DefaultProvider::generateCode(session, identifier);
+    code.code = QStringLiteral("11111");
     QDBusMessage message = QDBusMessage::createMethodCall(QStringLiteral("org.freedesktop.Notifications"),
                                                           QStringLiteral("/org/freedesktop/Notifications"),
                                                           QStringLiteral("org.freedesktop.Notifications"),
