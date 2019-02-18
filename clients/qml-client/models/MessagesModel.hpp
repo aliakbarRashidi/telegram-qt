@@ -32,6 +32,7 @@ namespace Telegram {
 
 namespace Client {
 
+class Client;
 class DeclarativeClient;
 class MessagesOperation;
 
@@ -254,6 +255,8 @@ public slots:
 
     void fetchPrevious();
     void fetchNext();
+
+    void readAllMessages();
 
 Q_SIGNALS:
     void clientChanged();
